@@ -29,6 +29,24 @@ class Kuntoilija:
         self.rasvaprosentti = fitness.aikuisen_rasvaprosentti(
             self.bmi,self.ika,self.sukupuoli)
         return self.rasvaprosentti
+    
+    # Metodi rasvaprosentin laskemiseen USA:n armeijan metodeilla
+    
+    def usa_rasvaprosentti_mies(self, vyotaron_ymparys, kaulan_ymparys):
+        self.usa_rasvaprosentti_mies = fitness.usarasvaprosentti_mies(
+            self.pituus, self.vyotaron_ymparys, self.kaulan_ymparys)
+        return self.usa_rasvaprosentti_mies
+    
+        usa_rasvaprosentti = 0
+        return usa_rasvaprosentti
+
+    def usa_rasvaprosentti_nainen(self, vyotaron_ymparys, lantion_ymparys, kaulan_ymparys):
+        self.usa_rasvaprosentti_nainen = fitness.usarasvaprosentti_nainen(
+            self.pituus, self.vyotaron_ymparys, self.lantion_ymparys, self.kaulan_ymparys)
+        return self.usa_rasvaprosentti_nainen
+    
+        usa_rasvaprosentti = 0
+        return usa_rasvaprosentti
  
 # JunioriKuntoilija-luokka Kuntoilija-luokan aliluokka (subclass)   
 class JunioriKuntoilija(Kuntoilija):
@@ -51,6 +69,7 @@ if __name__ == "__main__":
     print(kuntoilija.nimi, 'painaa', kuntoilija.paino, "kg")
     # print('painoindeksi on', kuntoilija.painoindeksi())
     print('rasvaprosentti on', kuntoilija.rasvaprosentti())
+    
     
     juniorikuntoilija = JunioriKuntoilija('Aku', 171, 65, 16, 1)
     print(juniorikuntoilija.nimi, 'painaa', juniorikuntoilija.paino, 'kg')
